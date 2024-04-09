@@ -1,0 +1,69 @@
+﻿@model WalmartPro.Models.Seller
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Seller</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SellerFirstName" class="control-label"></label>
+                <input asp-for="SellerFirstName" class="form-control" />
+                <span asp-validation-for="SellerFirstName" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="SellerLastName" class="control-label"></label>
+                <input asp-for="SellerLastName" class="form-control" />
+                <span asp-validation-for="SellerLastName" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="SellerEmail" class="control-label"></label>
+                <input asp-for="SellerEmail" class="form-control" type="email"/>
+                <span asp-validation-for="SellerEmail" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="SellerUsername" class="control-label"></label>
+                <input asp-for="SellerUsername" class="form-control" />
+                <span asp-validation-for="SellerUsername" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="SellerPassword" class="control-label"></label>
+                <input asp-for="SellerPassword" class="form-control" type="password"/>
+                <span asp-validation-for="SellerPassword" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="SellerMobileNumber" class="control-label"></label>
+                <input asp-for="SellerMobileNumber" class="form-control" />
+                <span asp-validation-for="SellerMobileNumber" class="text-danger"></span>
+            </div>
+            <br />
+           @*  <div class="form-group">
+                <label asp-for="LastLoginDate" class="control-label"></label>
+                <input asp-for="LastLoginDate" class="form-control" />
+                <span asp-validation-for="LastLoginDate" class="text-danger"></span>
+            </div> *@   
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
